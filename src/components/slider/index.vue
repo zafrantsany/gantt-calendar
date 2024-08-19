@@ -160,7 +160,7 @@ const height = computed(() => {
 });
 
 const bgColor = computed(() => {
-  return props?.bgColor || '#eca710';
+  return props?.bgColor || '#1C42E8';
 });
 
 const { toRowData, getProp } = useData();
@@ -248,9 +248,12 @@ onDrag(sliderRef, {
     const sd = startDate!.getOffset(w * currentMillisecond.value);
     const ed = endDate!.getOffset(w * currentMillisecond.value);
 
+    console.log('Slider moved:', { startDate: sd, endDate: ed }); // Console log
+
     props.data?.setStart(sd, ganttHeader.unit, props.linkedResize, movedData);
     props.data?.setEnd(ed, ganttHeader.unit, props.linkedResize, movedData);
   },
+
   onEnd: EmitMove
 });
 // #endregion
