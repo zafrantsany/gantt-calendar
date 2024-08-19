@@ -248,7 +248,7 @@ onDrag(sliderRef, {
     const sd = startDate!.getOffset(w * currentMillisecond.value);
     const ed = endDate!.getOffset(w * currentMillisecond.value);
 
-    console.log('Slider moved:', { startDate: sd, endDate: ed }); // Console log
+    console.log('Slider moved:', { startDate: sd, endDate: ed });
 
     props.data?.setStart(sd, ganttHeader.unit, props.linkedResize, movedData);
     props.data?.setEnd(ed, ganttHeader.unit, props.linkedResize, movedData);
